@@ -1,4 +1,4 @@
-## Relational Databases.
+## Relational Databases. (theory)
 
 1.Relational databases are a type of database management system (DBMS) that stores and provides access to data points that are related to one another.  
 2. A relational database is a collection of data points with pre-defined relationships between them. **datapoints**.
@@ -51,3 +51,60 @@ Horizontal Scalability: RDBMSs are not as easily horizontally scalable as NoSQL 
 ## SQL vs No-SQL databases.
 
 > **NoSQL databases offer more flexibility in data structures, often sacrificing some consistency for scalability and performance. The choice between SQL and NoSQL depends on factors like data structure, scalability needs, consistency requirements, and the nature of the application.**
+
+## SQL Advantages :
+
+1. structured .
+2. vertically scalable.
+3. format should be specified.
+
+## Disadvantages.
+
+1. scabalility issues.
+2. complex overtime.
+3. costly .
+
+## NoSQL Databases :
+
+### adv :
+
+1. formats stored in documents and key value pairs .
+2. horizontally scaled. (distributed systems.)
+
+### disadv :
+
+1. stale data.
+
+## Horizontal Scrolling Vs Vertical Scrolling :
+
+When your SQL database starts feeling slow, you have two main ways to handle more load:
+• Vertical Scaling → Make one machine stronger
+• Horizontal Scaling → Add more machines
+
+1. Horizontal Scrolling :
+   Pros
+
+✅ Scales almost infinitely
+✅ Better fault tolerance
+✅ Used by large-scale systems
+
+Cons
+
+❌ Complex setup <br>
+❌ Requires architecture changes <br>
+❌ Transactions across shards are hard<br>
+❌ Debugging is… spicy 2. Vertical Scrolling:<br>
+1.upgrade the exisiting database. 2. more ram , cpu , better disk etc .<br>
+
+<br>
+Pros
+
+✅ Very simple <br>
+✅ No code or query changes <br>
+✅ Works great for small–medium systems
+
+Cons
+
+❌ There is a hard limit (you can’t upgrade forever) <br>
+❌ Expensive quickly <br>
+❌ Single point of failure (if it dies → everything dies) <br>
