@@ -33,3 +33,6 @@
 5. DataFile / index file(metadata) : Magnetically engraved into disk. (RDMS table, NoSQL : document file) . This is where actual data is stored and written into disk.
 6. Storage Engine : this is where data is stored in different structures. (Btree, B+tree, hash index).
 7. Managers : transaction managers : it guarantees (happens or not thats all), lock manager: guarantees write option on that part of disk whilst happening concurrently.No two parallel process can access that part . Recovery manager: logs , Rollback feature.(append only).
+
+> learned from Hitesh Chowdary YT.
+> [How database engine really works](https://www.youtube.com/watch?v=bB7YAWPiJR4)
