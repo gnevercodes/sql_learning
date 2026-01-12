@@ -55,5 +55,11 @@ INSERT INTO employee_projects VALUES
 select * from projects ; 
 select emp_name , salalry from employees;
 
-select e.emp_name,d.dept_name from employees e 
-outer join departments d on e.emp_id=d.d.dept_id; 
+SELECT e.emp_name, d.dept_name
+FROM employees e
+LEFT JOIN departments d ON e.dept_id = d.dept_id;
+
+SELECT e.emp_name, p.project_name, ep.role
+FROM employee_projects ep
+JOIN employees e ON ep.emp_id = e.emp_id
+JOIN projects p ON ep.project_id = p.project_id;

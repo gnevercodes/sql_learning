@@ -181,3 +181,41 @@ Supporting objects: Indexes, Constraints, Views, Functions/Stored Procedures, Tr
    Functions / Stored Procedures — encapsulated logic executed in the DB.
 10. Transactions — group of statements executed atomically (COMMIT / ROLLBACK).
 11. Users & Roles / Permissions — access control (GRANT / REVOKE).
+
+## Datatypes :
+
+1. Numeric data types such as INT, TINYINT, BIGINT, FLOAT, REAL, etc.
+2. Date and Time data types such as DATE, TIME, DATETIME, etc.
+3. Character and String data types such as CHAR, VARCHAR, TEXT, etc.
+4. Unicode character string data types such as NCHAR, NVARCHAR, NTEXT, etc.
+5. Binary data types such as BINARY, VARBINARY, etc.
+6. Miscellaneous data types such as CLOB, BLOB, XML, CURSOR, TABLE, etc.
+
+### why to choose the right sql type
+
+a. Storage efficiency
+b. performance.
+c. integrity
+
+| Category  | Data Type        | Example                   | Use Case            | Notes                 |
+| --------- | ---------------- | ------------------------- | ------------------- | --------------------- |
+| Numeric   | INT / INTEGER    | age INT                   | Counts, IDs         | Most commonly used    |
+| Numeric   | BIGINT           | views BIGINT              | Very large numbers  | Analytics, logs       |
+| Numeric   | SMALLINT         | rating SMALLINT           | Small ranges        | Flags, enums          |
+| Numeric   | NUMERIC(p,s)     | price NUMERIC(10,2)       | Money               | Exact, slow but safe  |
+| Numeric   | REAL             | temp REAL                 | Scientific data     | Not exact             |
+| Numeric   | DOUBLE PRECISION | distance DOUBLE PRECISION | Measurements        | Avoid for money       |
+| Text      | TEXT             | description TEXT          | Free text           | Preferred in Postgres |
+| Text      | VARCHAR(n)       | email VARCHAR(255)        | Limited text        | Adds validation       |
+| Text      | CHAR(n)          | country CHAR(2)           | Fixed-length codes  | Pads spaces           |
+| Date/Time | DATE             | dob DATE                  | Date only           | YYYY-MM-DD            |
+| Date/Time | TIME             | login_time TIME           | Time only           | No date               |
+| Date/Time | TIMESTAMP        | created_at TIMESTAMP      | Date + time         | No timezone           |
+| Date/Time | TIMESTAMPTZ      | created_at TIMESTAMPTZ    | Prod timestamps     | Timezone-aware        |
+| Boolean   | BOOLEAN          | is_active BOOLEAN         | Flags               | TRUE / FALSE / NULL   |
+| ID        | SERIAL           | id SERIAL                 | Auto-increment ID   | Legacy but common     |
+| ID        | BIGSERIAL        | id BIGSERIAL              | Large auto ID       | Safer at scale        |
+| ID        | UUID             | id UUID                   | Distributed systems | Needs extension       |
+| JSON      | JSON             | data JSON                 | Raw JSON            | Stored as text        |
+| JSON      | JSONB            | data JSONB                | Queryable JSON      | Indexable, faster     |
+| Array     | TEXT[]           | tags TEXT[]               | Lists               | Use sparingly         |
