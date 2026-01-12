@@ -160,3 +160,24 @@ HAVING COUNT(*) > 5
 ORDER BY COUNT(*) DESC
 LIMIT 10;
 ```
+
+## Database Hierarchy Overview :
+
+Quick diagram (top → bottom)
+Server/Instance → Database → Schema → Table → Column → Row (record)
+Supporting objects: Indexes, Constraints, Views, Functions/Stored Procedures, Transactions, Users/Roles
+
+**levels explained**
+
+1. Server / Instance — the running DBMS process (e.g., PostgreSQL server, MySQL server) that hosts one or more databases.
+2. Database — a logical container for data (e.g., mydb). Some systems (MySQL) treat “database” similarly to PostgreSQL’s schema.
+3. Schema — a namespace inside a database to group related objects (tables, views). Example: public, sales.
+4. Table — stores structured records (rows). Defined by columns and types. Example: customers.
+5. Column — named field in a table with a data type (e.g., id INT, email TEXT).
+6. Row (record) — a single entry in a table (one customer).
+7. Index — speeds lookups on column(s).
+8. Constraint — rules for integrity (PRIMARY KEY, FOREIGN KEY, UNIQUE, CHECK, NOT NULL).
+9. View — saved query treated as a virtual table.
+   Functions / Stored Procedures — encapsulated logic executed in the DB.
+10. Transactions — group of statements executed atomically (COMMIT / ROLLBACK).
+11. Users & Roles / Permissions — access control (GRANT / REVOKE).
