@@ -191,7 +191,7 @@ Supporting objects: Indexes, Constraints, Views, Functions/Stored Procedures, Tr
 5. Binary data types such as BINARY, VARBINARY, etc.
 6. Miscellaneous data types such as CLOB, BLOB, XML, CURSOR, TABLE, etc.
 
-### why to choose the right sql type
+### why to choose the right sql type [ArticleLink](https://www.digitalocean.com/community/tutorials/sql-data-types#relational-database-vendor-differences)
 
 a. Storage efficiency
 b. performance.
@@ -219,3 +219,11 @@ c. integrity
 | JSON      | JSON             | data JSON                 | Raw JSON            | Stored as text        |
 | JSON      | JSONB            | data JSONB                | Queryable JSON      | Indexable, faster     |
 | Array     | TEXT[]           | tags TEXT[]               | Lists               | Use sparingly         |
+
+```
+PostgreSQL
+ └── Database
+      └── Schema
+           └── Tables
+                └── Rows
+```
