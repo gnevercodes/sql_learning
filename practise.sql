@@ -54,3 +54,34 @@ where department='Sales';
 SELECT AVG(salary) AS avg_salary
 FROM employees
 WHERE hire_date > '2021-12-31';
+
+
+create table departments(
+    dept_id serial PRIMARY key,
+    dept_name VARCHAR(50) UNIQUE not null
+); 
+INSERT INTO departments (dept_name) VALUES
+('IT'),
+('HR'),
+('Sales'),
+('Finance');
+
+create table employees_v2(
+    emp_id SERIAL PRIMARY KEY,
+    name varchar(40) not NULL,
+    salary int check(salary>0),
+    hire_date DATE,
+    dept_id INT,
+    constraint fk_department
+        Foreign Key (dept_id) REFERENCES departments(dept_id)
+); 
+INSERT INTO employees_v2 (name, salary, hire_date, dept_id) VALUES
+('Alice', 90000, '2021-06-15', 1),
+('Bob', 85000, '2023-01-10', 1),
+('Charlie', 60000, '2020-09-20', 2),
+('Diana', 65000, '2022-11-01', 2),
+('Evan', 70000, '2023-03-12', 3);
+
+INSERT INTO departments (dept_id, dept_name)
+VALUES (1, 'Legal');
+
