@@ -22,3 +22,5 @@ VALUES
 select * from baseA;
 select * from baseB; 
 
+select *
+from (SELECT a,fruit_A from baseA where a>2)  as baseeA;
