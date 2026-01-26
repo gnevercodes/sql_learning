@@ -36,3 +36,36 @@
 
 > learned from Hitesh Chowdary YT.
 > [How database engine really works](https://www.youtube.com/watch?v=bB7YAWPiJR4)
+
+
+```md
+Client / UI
+   ↓
+Backend Application
+   ↓
+ORM (optional)
+   ↓
+Database Engine
+   ↓
+Memory (Cache / Buffer Pool)
+   ↓
+Disk (SSD / HDD)
+   ↑
+Database Engine
+   ↑
+ORM
+   ↑
+Backend
+   ↑
+Client
+```
+
+1. ORM : Object relational mapper : This takes our method call and generates SQL whilst handling parameter binding , entity mapping , lazy vs eager loading , transactions .
+2. Database Connection Layer : before sql runs , pooling happpens (reuse of open connections).
+3. Database engine : This is where execution happens, sql parser , optimizer, cache , managers , engines are present in this.
+4. Cache : Before touching the disk , DB checks the cache(buffer shared) to see if the row is being cached for frequent use and then returned immediately.
+5. Then DB requests Pages from Disk , loads into memory and reads the row.
+6. Disk : **Index-> Pointer -> DataPage** or else full page scan.
+7. Result construction : DB formats the result and coverts types and send bytes back to the application.
+8. Back to ORM : this then converts rows to objects (JAVA Objects).
+9. backend --> user receives.
