@@ -69,3 +69,18 @@ Client
 7. Result construction : DB formats the result and coverts types and send bytes back to the application.
 8. Back to ORM : this then converts rows to objects (JAVA Objects).
 9. backend --> user receives.
+
+
+## How Database Design Fits In
+
+### Schema Design Impacts EVERYTHING
+
+| Design Choice     | Impact                                  |
+|-------------------|------------------------------------------|
+| Indexes           | Improves query performance               |
+| Normalization     | Ensures data integrity and consistency   |
+| Denormalization   | Optimizes read-heavy workloads           |
+| Primary Keys      | Enables fast row lookups                 |
+| Foreign Keys      | Improves join efficiency and integrity   |
+| Data Types        | Affects storage, memory, and speed       |
+| Partitioning      | Helps scale large datasets efficiently   |
