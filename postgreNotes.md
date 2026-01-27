@@ -69,6 +69,15 @@ Order By ( ordering rows)
 Limit clause
 ```
 
+# execution order
+
+- FROM
+- WHERE
+- GROUP BY
+- HAVING
+- SELECT
+- ORDER BY
+
 # PostgreSQL Clauses Cheat Sheet
 
 A quick reference guide to the most commonly used PostgreSQL clauses for SQL statements.
@@ -227,3 +236,17 @@ PostgreSQL
            └── Tables
                 └── Rows
 ```
+
+## Short notes on Null Values:
+
+> t's always good to reduce the possibility of NULL values in databases because they require special attention when constructing queries, constraints (certain functions behave differently with null values) and when processing the results.
+
+**An alternative to NULL values in your database is to have data-type appropriate default values, like 0 for numerical data, empty strings for text data, etc. But if your database needs to store incomplete data, then NULL values can be appropriate if the default values will skew later analysis (for example, when taking averages of numerical data).**
+
+## notes on queris with aggregates:
+
+1.  GROUP BY groups rows that have the same value so you can apply aggregate functions like: sum(),count(),max(),min(),avg()
+2.  You cannot use aggregates in WHERE.
+3.       WHERE → filters rows
+    • HAVING → filters groups
+4.  WHERE filters before GROUP BY, HAVING filters after GROUP BY
