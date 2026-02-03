@@ -71,7 +71,7 @@ Client
 9. backend --> user receives.
 
 
-## How Database Design Fits In
+## How Database Design Fits In Real cases
 
 ### Schema Design Impacts EVERYTHING
 
